@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - WearShop</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section class="cart-section">
+        <h1>Your Cart</h1>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img id="cart-image" src="" alt="Product Image" class="cart-item-image">
+                <h2 id="cart-product-name">Product Name</h2>
+                <p id="cart-product-price">Price: $0.00</p>
+                <p id="cart-product-size">Size: </p>
+                <p id="cart-product-color">Color: </p>
+                <p id="cart-product-waist">Waist Size: </p>
+            </div>
+        </div>
+       
+        <div class="add-to-cart-container">
+            <button class="add-to-cart-button" onclick="addToCart()">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 WearShop | All Rights Reserved</p>
+    </footer>
+
+    
+    <script>
+       
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                price: params.get('price'),
+                image: params.get('image'),
+                size: params.get('size'),
+                color: params.get('color'),
+                waist: params.get('waist')
+            };
+        }
+
+        
+        function displayProductInCart() {
+            const product = getQueryParams();
+
+            
+            const productName = product.name;
+            const productPrice = product.price;
+            const productImage = product.image;
+            const productSize = product.size;
+            const productColor = product.color;
+            const productWaist = product.waist;
+
+            
+            document.getElementById('cart-product-name').innerText = productName;
+            document.getElementById('cart-product-price').innerText = `Price: $${productPrice}`;
+            document.getElementById('cart-image').src = productImage;
+            document.getElementById('cart-product-size').innerText = `Size: ${productSize}`;
+            document.getElementById('cart-product-color').innerText = `Color: ${productColor}`;
+            document.getElementById('cart-product-waist').innerText = `Waist Size: ${productWaist}`;
+        }
+
+        
+        function addToCart() {
+            const product = getQueryParams();
+            const productName = product.name;
+            const productPrice = product.price;
+            const productSize = product.size;
+            const productColor = product.color;
+            const productWaist = product.waist;
+
+            
+            alert(`Added to Cart:\nName: ${productName}\nPrice: $${productPrice}\nSize: ${productSize}\nColor: ${productColor}\nWaist: ${productWaist}`);
+
+            
+        }
+
+       
+        window.onload = displayProductInCart;
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | EduLearn</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">EduLearn</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <button class="login-btn">Log In</button>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Feel free to reach out with any questions or feedback!</p>
+
+    <form class="contact-form" action="submit_form.php" method="POST">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <p>&copy; 2024 EduLearn. All rights reserved.</p>
+  </footer>
+</body>
+</html>
